@@ -80,6 +80,12 @@ document.addEventListener("click", (event)=>{
     if (event.target.id == "start"){
         let i = 0;
 
+        const oldP = document.querySelector("p")
+
+        if (oldP){
+            oldP.remove()
+        }
+
         const div = document.querySelector("#game")
         const lines = `<h3>Scores: </h3>
             <p> <span class="human"></span> | <span class="comp"></span></p>
@@ -125,7 +131,7 @@ document.addEventListener("click", (event)=>{
 
                 const heading =document.querySelector('h1');
                 const newLine = `<p>Thanks for playing!</p>
-                <button id="start">Click to play!</button>`;
+                <button id="start">Click to play again!</button>`;
                 heading.insertAdjacentHTML('beforeend', newLine);
 
                 humanScore = 0;
